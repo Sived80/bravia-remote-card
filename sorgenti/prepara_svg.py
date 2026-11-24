@@ -101,16 +101,24 @@ def sostituisci(vecchio, nuovo):
     assert s.count(vecchio) >= 1, vecchio
     s = s.replace(vecchio, nuovo)
 
-#    niente effetto al passaggio del mouse: l'alone si accende solo premendo
-#    (sui telefoni l'hover resta "appeso" dopo un tocco, col mouse resta finché il puntatore è sopra)
+#    effetto al passaggio del mouse solo con un mouse vero:
+#    sui touch screen l'hover resta "appeso" dopo un tocco e il tasto sembra ancora acceso
 sostituisci('''    /* Subtle hover cue */
     .remote-btn:hover .corona-glow {
       opacity: 0.24;
     }
     .remote-btn:hover .corona-ring {
       opacity: 0.18;
-    }
-''', '')
+    }''', '''    /* Subtle hover cue (only with a real mouse: on touch screens hover sticks after a tap) */
+    @media (hover: hover) and (pointer: fine) {
+      .remote-btn:hover .corona-glow {
+        opacity: 0.24;
+      }
+      .remote-btn:hover .corona-ring {
+        opacity: 0.18;
+      }
+      .dpad-sector:hover .sector-face { fill-opacity: 0.03; }
+    }''')
 sostituisci('    .dpad-sector:hover .sector-face { fill-opacity: 0.03; }\n    .dpad-sector:active', '    .dpad-sector:active')
 #    durate: da ~0,6 s a ~0,25 s
 for vecchio, nuovo in [

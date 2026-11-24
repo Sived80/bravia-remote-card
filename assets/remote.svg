@@ -70,6 +70,16 @@
       transition: opacity 0.12s ease-out;
     }
 
+    /* Subtle hover cue (only with a real mouse: on touch screens hover sticks after a tap) */
+    @media (hover: hover) and (pointer: fine) {
+      .remote-btn:hover .corona-glow {
+        opacity: 0.24;
+      }
+      .remote-btn:hover .corona-ring {
+        opacity: 0.18;
+      }
+      .dpad-sector:hover .sector-face { fill-opacity: 0.03; }
+    }
 
     /* Active press state (works with pure CSS even without JS) */
     .remote-btn:active .btn-face,
