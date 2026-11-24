@@ -2,7 +2,7 @@ import { LitElement, css, html, nothing, PropertyValues } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import REMOTE_SVG from '../assets/remote.svg';
 import { BUTTONS, POWER_BUTTON } from './commands';
-import { DEFAULTS, MAX_WIDTH_RANGE } from './constants';
+import { BEHAVIOUR_DEFAULTS, SizeConfig, resolveSize } from './constants';
 import { Hass, findMediaPlayer, findRemote, language, platformOf } from './hass';
 import { t } from './i18n';
 import './editor';
@@ -10,7 +10,7 @@ import './editor';
 declare const __VERSION__: string;
 const VERSION = typeof __VERSION__ === 'string' ? __VERSION__ : 'dev';
 
-export interface BraviaRemoteCardConfig {
+export interface BraviaRemoteCardConfig extends SizeConfig {
   type: string;
   /** Entità remote.* della TV. Se manca, la card cerca da sola una TV Sony. */
   entity?: string;
@@ -22,8 +22,6 @@ export interface BraviaRemoteCardConfig {
   repeat_interval?: number;
   /** Vibrazione alla pressione (app mobile). */
   haptic?: boolean;
-  /** Larghezza massima del telecomando in px (l'altezza segue in proporzione). */
-  max_width?: number;
   /** Sostituisce il comando di singoli tasti, es. { "btn-ok": "DpadCenter" }. */
   commands?: Record<string, string>;
 }
@@ -61,7 +59,7 @@ export class BraviaRemoteCard extends LitElement {
     if (config.entity && !config.entity.startsWith('remote.')) {
       throw new Error('entity must be a remote.* entity');
     }
-    this._config = { ...DEFAULTS, ...config };
+    this._config = { ...BEHAVIOUR_DEFAULTS, ...config };
   }
 
   getCardSize() {
@@ -89,6 +87,13 @@ export class BraviaRemoteCard extends LitElement {
     return !id || old.states[id] !== this.hass.states[id] || old.locale?.language !== this.hass.locale?.language;
   }
 
+  protected updated() {
+    // Proporzioni libere: il disegno si adatta a larghezza e altezza scelte.
+    const svg = this.renderRoot.querySelector('svg');
+    const keep = resolveSize(this._config).keepRatio;
+    svg?.setAttribute('preserveAspectRatio', keep ? 'xMidYMid meet' : 'none');
+  }
+
   disconnectedCallback() {
     super.disconnectedCallback();
     this._release();
@@ -101,16 +106,16 @@ export class BraviaRemoteCard extends LitElement {
     const state = remote ? this.hass.states[remote] : undefined;
     const unavailable = !state || state.state === 'unavailable';
     const message = !remote ? t(lang, 'no_tv') : unavailable ? t(lang, 'unavailable') : '';
-    const width = Math.min(
-      MAX_WIDTH_RANGE.max,
-      Math.max(MAX_WIDTH_RANGE.min, Number(this._config.max_width) || DEFAULTS.max_width),
-    );
+    const size = resolveSize(this._config);
+    const style = size.keepRatio
+      ? `--bravia-remote-width: ${size.width}px`
+      : `--bravia-remote-width: ${size.width}px; --bravia-remote-height: ${size.height}px`;
 
     return html`
       <ha-card>
         <div
-          class="remote ${unavailable ? 'unavailable' : ''}"
-          style="--bravia-remote-width: ${width}px"
+          class="remote ${unavailable ? 'unavailable' : ''} ${size.keepRatio ? '' : 'free'}"
+          style=${style}
           @pointerdown=${this._onPointerDown}
           @keydown=${this._onKeyDown}
           @contextmenu=${(e: Event) => e.preventDefault()}
@@ -254,6 +259,9 @@ export class BraviaRemoteCard extends LitElement {
       display: block;
       width: 100%;
       height: auto;
+    }
+    .remote.free svg {
+      height: var(--bravia-remote-height, auto);
     }
     .remote.unavailable {
       opacity: 0.45;
