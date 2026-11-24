@@ -7,7 +7,7 @@ It works with the **Bravia TV** and the **Android TV Remote** integrations and s
 
 ## Features
 
-- **Plug and play**: finds your Sony TV and the matching media player by itself, and picks the right commands for the integration in use.
+- **Plug and play**: finds your Sony TV and the matching media player by itself, and picks the right commands for the integration in use. With more than one Sony TV, add one card per TV and pick the TV in the editor.
 - **35 buttons**: power, input, play/pause, rewind, fast forward, a four-way D-pad with OK, back, options, Home, Assistant, volume, channels, mute, subtitles, TV guide, the four colour keys and the number pad.
 - **Glowing feedback**: the pressed button lights up, following its shape. The volume and channel rockers light up as half pills, the D-pad as an arc.
 - **Hold to repeat**: arrows, volume and channels repeat while you hold them, with adjustable delay and speed.
