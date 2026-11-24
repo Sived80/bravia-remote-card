@@ -31,6 +31,9 @@ const change = (form, value) => form().dispatchEvent(new CustomEvent('value-chan
     el.hass.calls.length = 0;
     down(btn(el, 'btn-vol-up')); await sleep(1250); up(); await sleep(300);
     out.push('volume tenuto: ' + JSON.stringify(el.hass.calls.map((c) => c.t - el.hass.calls[0].t)));
+    const glow = (id) => getComputedStyle(btn(el, id).querySelector('.corona-glow')).opacity;
+    down(btn(el, 'btn-ok')); await sleep(60); const during = glow('btn-ok'); up(); await sleep(400);
+    out.push('alone OK: durante=' + during + ' dopo 0,4 s=' + glow('btn-ok') + ' classi=' + btn(el, 'btn-ok').getAttribute('class'));
     el.hass.calls.length = 0;
     await tap(el, 'btn-power');
     out.push('accensione: ' + el.hass.calls.map((c) => c.domain + '.' + c.service + ' ' + c.target.entity_id).join());

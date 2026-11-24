@@ -67,16 +67,9 @@
     .corona-pulse {
       opacity: 0;
       transform-origin: 0px 0px;
-      transition: opacity 0.22s ease-out;
+      transition: opacity 0.12s ease-out;
     }
 
-    /* Subtle hover cue */
-    .remote-btn:hover .corona-glow {
-      opacity: 0.24;
-    }
-    .remote-btn:hover .corona-ring {
-      opacity: 0.18;
-    }
 
     /* Active press state (works with pure CSS even without JS) */
     .remote-btn:active .btn-face,
@@ -99,19 +92,19 @@
 
     /* Animated luminous corona + pulse wave on click/tap */
     .remote-btn.is-pressed .btn-face {
-      animation: btnPressBounce 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+      animation: btnPressBounce 0.18s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .remote-btn.is-pressed .corona-glow {
-      animation: coronaGlowFlash 0.62s ease-out forwards;
+      animation: coronaGlowFlash 0.26s ease-out forwards;
     }
 
     .remote-btn.is-pressed .corona-ring {
-      animation: coronaRingFlash 0.58s ease-out forwards;
+      animation: coronaRingFlash 0.24s ease-out forwards;
     }
 
     .remote-btn.is-pressed .corona-pulse {
-      animation: coronaRipple 0.62s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: coronaRipple 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
     @keyframes btnPressBounce {
@@ -142,7 +135,6 @@
     .dpad-sector .sector-face {
       transition: fill-opacity 0.14s ease;
     }
-    .dpad-sector:hover .sector-face { fill-opacity: 0.03; }
     .dpad-sector:active .sector-face,
     .dpad-sector.is-holding .sector-face { fill-opacity: 0.08; transition: fill-opacity 0.05s ease-in; }
   ]]></style>

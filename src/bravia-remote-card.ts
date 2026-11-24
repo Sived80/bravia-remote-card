@@ -26,7 +26,7 @@ export interface BraviaRemoteCardConfig extends SizeConfig {
   commands?: Record<string, string>;
 }
 
-const PRESS_FLASH_MS = 650;
+const PRESS_FLASH_MS = 300;
 const OFF_STATES = ['off', 'standby', 'unknown'];
 
 const svgText = REMOTE_SVG.replace(/<\?xml[^>]*\?>/, '');

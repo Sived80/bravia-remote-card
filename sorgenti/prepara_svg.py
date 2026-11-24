@@ -95,6 +95,33 @@ for gid, alto in [('btn-vol-up', True), ('btn-vol-down', False), ('btn-ch-up', T
                         f'<path d="{mezza_pillola(0, alto)}" fill="transparent"/>', blocco_txt)
     s = s[:a] + blocco_txt + s[f:]
 
+# 6) animazioni più brevi e niente alone "appeso" sui touch screen
+def sostituisci(vecchio, nuovo):
+    global s
+    assert s.count(vecchio) >= 1, vecchio
+    s = s.replace(vecchio, nuovo)
+
+#    niente effetto al passaggio del mouse: l'alone si accende solo premendo
+#    (sui telefoni l'hover resta "appeso" dopo un tocco, col mouse resta finché il puntatore è sopra)
+sostituisci('''    /* Subtle hover cue */
+    .remote-btn:hover .corona-glow {
+      opacity: 0.24;
+    }
+    .remote-btn:hover .corona-ring {
+      opacity: 0.18;
+    }
+''', '')
+sostituisci('    .dpad-sector:hover .sector-face { fill-opacity: 0.03; }\n    .dpad-sector:active', '    .dpad-sector:active')
+#    durate: da ~0,6 s a ~0,25 s
+for vecchio, nuovo in [
+    ('transition: opacity 0.22s ease-out;', 'transition: opacity 0.12s ease-out;'),
+    ('animation: btnPressBounce 0.32s', 'animation: btnPressBounce 0.18s'),
+    ('animation: coronaGlowFlash 0.62s', 'animation: coronaGlowFlash 0.26s'),
+    ('animation: coronaRingFlash 0.58s', 'animation: coronaRingFlash 0.24s'),
+    ('animation: coronaRipple 0.62s', 'animation: coronaRipple 0.28s'),
+]:
+    sostituisci(vecchio, nuovo)
+
 (qui.parent / 'assets' / 'remote.svg').write_text(s, encoding='utf-8')
 ids = re.findall(r'<g id="(btn-[^"]+)" class="remote-btn', s)
 print(len(s), len(ids), ids)
