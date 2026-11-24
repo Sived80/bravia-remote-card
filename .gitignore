@@ -4,3 +4,4 @@ node_modules/
 dist/
 test/test.html
 test/screenshot.html
+test/editor-shot.html
