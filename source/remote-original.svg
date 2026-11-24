@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" id="remote-svg" viewBox="0 0 300 1000" width="300" height="1000" role="img" aria-label="Telecomando interattivo">
+<svg xmlns="http://www.w3.org/2000/svg" id="remote-svg" viewBox="0 0 300 1000" width="300" height="1000" role="img" aria-label="Remote control">
   <defs>
     <!-- Body matte gradient -->
     <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -165,7 +165,7 @@
     </g>
 
     <!-- Input / Source Button -->
-    <g id="btn-input" class="remote-btn" tabindex="0" role="button" aria-label="Sorgente" transform="translate(219.0, 145.0)">
+    <g id="btn-input" class="remote-btn" tabindex="0" role="button" aria-label="Input" transform="translate(219.0, 145.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -183,7 +183,7 @@
   <!-- Media Playback Controls -->
   <g id="media-controls">
     <!-- Play / Pause -->
-    <g id="btn-play-pause" class="remote-btn" tabindex="0" role="button" aria-label="Play Pausa" transform="translate(150.0, 198.0)">
+    <g id="btn-play-pause" class="remote-btn" tabindex="0" role="button" aria-label="Play/pause" transform="translate(150.0, 198.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -198,7 +198,7 @@
     </g>
 
     <!-- Rewind -->
-    <g id="btn-rewind" class="remote-btn" tabindex="0" role="button" aria-label="Indietro" transform="translate(81.0, 223.0)">
+    <g id="btn-rewind" class="remote-btn" tabindex="0" role="button" aria-label="Rewind" transform="translate(81.0, 223.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -212,7 +212,7 @@
     </g>
 
     <!-- Fast Forward -->
-    <g id="btn-fast-forward" class="remote-btn" tabindex="0" role="button" aria-label="Avanti" transform="translate(219.0, 223.0)">
+    <g id="btn-fast-forward" class="remote-btn" tabindex="0" role="button" aria-label="Fast forward" transform="translate(219.0, 223.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -229,7 +229,7 @@
   <!-- Directional Pad (D-Pad Ring + Center OK Button) -->
   <g id="d-pad-group" transform="translate(150.0, 327.0)">
     <!-- Outer D-pad ring -->
-    <g id="btn-dpad" class="remote-btn" tabindex="0" role="button" aria-label="Frecce direzionali">
+    <g id="btn-dpad" class="remote-btn" tabindex="0" role="button" aria-label="Directional pad">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="90" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="91.5" fill="none" stroke="#38E8FF" stroke-width="7.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -258,7 +258,7 @@
   <!-- Navigation Controls -->
   <g id="navigation-controls">
     <!-- Back / Exit -->
-    <g id="btn-back" class="remote-btn" tabindex="0" role="button" aria-label="Indietro" transform="translate(81.0, 431.0)">
+    <g id="btn-back" class="remote-btn" tabindex="0" role="button" aria-label="Back" transform="translate(81.0, 431.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -273,7 +273,7 @@
     </g>
 
     <!-- More Options (...) -->
-    <g id="btn-more" class="remote-btn" tabindex="0" role="button" aria-label="Opzioni" transform="translate(219.0, 431.0)">
+    <g id="btn-more" class="remote-btn" tabindex="0" role="button" aria-label="Options" transform="translate(219.0, 431.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -296,7 +296,7 @@
             fill="url(#btnGrad)" stroke="#2A2928" stroke-width="1.2" filter="url(#btnShadow)"/>
 
       <!-- Volume Up interactive zone -->
-      <g id="btn-vol-up" class="remote-btn" tabindex="0" role="button" aria-label="Volume Su" transform="translate(81.0, 513.0)">
+      <g id="btn-vol-up" class="remote-btn" tabindex="0" role="button" aria-label="Volume up" transform="translate(81.0, 513.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -312,7 +312,7 @@
       </g>
 
       <!-- Volume Down interactive zone -->
-      <g id="btn-vol-down" class="remote-btn" tabindex="0" role="button" aria-label="Volume Giù" transform="translate(81.0, 571.0)">
+      <g id="btn-vol-down" class="remote-btn" tabindex="0" role="button" aria-label="Volume down" transform="translate(81.0, 571.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -341,7 +341,7 @@
     </g>
 
     <!-- Microphone / Voice Button (Aligned with bottom extreme of Volume & Channel rockers, Border: Violet #A855F7) -->
-    <g id="btn-voice" class="remote-btn" tabindex="0" role="button" aria-label="Controllo Vocale" transform="translate(150.0, 571.0)">
+    <g id="btn-voice" class="remote-btn" tabindex="0" role="button" aria-label="Voice control" transform="translate(150.0, 571.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#A855F7" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#A855F7" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -363,7 +363,7 @@
             fill="url(#btnGrad)" stroke="#2A2928" stroke-width="1.2" filter="url(#btnShadow)"/>
 
       <!-- Channel Up interactive zone -->
-      <g id="btn-ch-up" class="remote-btn" tabindex="0" role="button" aria-label="Canale Su" transform="translate(219.0, 513.0)">
+      <g id="btn-ch-up" class="remote-btn" tabindex="0" role="button" aria-label="Channel up" transform="translate(219.0, 513.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -376,7 +376,7 @@
       </g>
 
       <!-- Channel Down interactive zone -->
-      <g id="btn-ch-down" class="remote-btn" tabindex="0" role="button" aria-label="Canale Giù" transform="translate(219.0, 571.0)">
+      <g id="btn-ch-down" class="remote-btn" tabindex="0" role="button" aria-label="Channel down" transform="translate(219.0, 571.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -390,10 +390,10 @@
     </g>
   </g>
 
-  <!-- Utility Row: Mute & Guida TV (? button removed, Search replaced with Guida TV) -->
+  <!-- Utility Row: Mute & TV Guide (? button removed, Search replaced with TV Guide) -->
   <g id="utility-controls">
     <!-- Mute -->
-    <g id="btn-mute" class="remote-btn" tabindex="0" role="button" aria-label="Muto" transform="translate(81.0, 633.0)">
+    <g id="btn-mute" class="remote-btn" tabindex="0" role="button" aria-label="Mute" transform="translate(81.0, 633.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -407,8 +407,8 @@
       </g>
     </g>
 
-    <!-- Guida TV (Replaces Search magnifying glass) -->
-    <g id="btn-tv-guide" class="remote-btn" tabindex="0" role="button" aria-label="Guida TV" transform="translate(219.0, 633.0)">
+    <!-- TV Guide (Replaces Search magnifying glass) -->
+    <g id="btn-tv-guide" class="remote-btn" tabindex="0" role="button" aria-label="TV guide" transform="translate(219.0, 633.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -421,7 +421,7 @@
         <!-- TV Stand -->
         <line x1="0" y1="4.8" x2="0" y2="7.6" stroke="#F0F0EE" stroke-width="1.7" stroke-linecap="round"/>
         <line x1="-4.5" y1="7.6" x2="4.5" y2="7.6" stroke="#F0F0EE" stroke-width="1.7" stroke-linecap="round"/>
-        <!-- EPG / Guida TV schedule bars inside screen -->
+        <!-- EPG / TV Guide schedule bars inside screen -->
         <line x1="-6.3" y1="-4.2" x2="-3.5" y2="-4.2" stroke="#F0F0EE" stroke-width="1.5" stroke-linecap="round"/>
         <line x1="-1.2" y1="-4.2" x2="6.3" y2="-4.2" stroke="#F0F0EE" stroke-width="1.5" stroke-linecap="round"/>
         <line x1="-6.3" y1="-1.4" x2="-3.5" y2="-1.4" stroke="#F0F0EE" stroke-width="1.5" stroke-linecap="round"/>
@@ -434,7 +434,7 @@
 
   <!-- Color Buttons Row -->
   <g id="color-buttons">
-    <g id="btn-red" class="remote-btn" tabindex="0" role="button" aria-label="Tasto Rosso" transform="translate(70.0, 690.5)">
+    <g id="btn-red" class="remote-btn" tabindex="0" role="button" aria-label="Red" transform="translate(70.0, 690.5)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="20.2" fill="none" stroke="#FF3355" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="21.2" fill="none" stroke="#FF3355" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -445,7 +445,7 @@
         <circle cx="0" cy="0" r="6.5" fill="#EE1739"/>
       </g>
     </g>
-    <g id="btn-green" class="remote-btn" tabindex="0" role="button" aria-label="Tasto Verde" transform="translate(123.3, 690.5)">
+    <g id="btn-green" class="remote-btn" tabindex="0" role="button" aria-label="Green" transform="translate(123.3, 690.5)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="20.2" fill="none" stroke="#34D399" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="21.2" fill="none" stroke="#34D399" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -456,7 +456,7 @@
         <circle cx="0" cy="0" r="6.5" fill="#31B255"/>
       </g>
     </g>
-    <g id="btn-yellow" class="remote-btn" tabindex="0" role="button" aria-label="Tasto Giallo" transform="translate(176.7, 690.5)">
+    <g id="btn-yellow" class="remote-btn" tabindex="0" role="button" aria-label="Yellow" transform="translate(176.7, 690.5)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="20.2" fill="none" stroke="#FDE047" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="21.2" fill="none" stroke="#FDE047" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -467,7 +467,7 @@
         <circle cx="0" cy="0" r="6.5" fill="#FEEF16"/>
       </g>
     </g>
-    <g id="btn-blue" class="remote-btn" tabindex="0" role="button" aria-label="Tasto Blu" transform="translate(230.0, 690.5)">
+    <g id="btn-blue" class="remote-btn" tabindex="0" role="button" aria-label="Blue" transform="translate(230.0, 690.5)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="20.2" fill="none" stroke="#38BDF8" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="21.2" fill="none" stroke="#38BDF8" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -482,7 +482,7 @@
 
   <!-- Numeric Keypad (100% pure vector paths, font-independent) -->
   <g id="numpad">
-    <g id="btn-1" class="remote-btn" tabindex="0" role="button" aria-label="Tasto 1" transform="translate(81.0, 746.0)">
+    <g id="btn-1" class="remote-btn" tabindex="0" role="button" aria-label="Number 1" transform="translate(81.0, 746.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -496,7 +496,7 @@
         <line x1="2.2" y1="8.5" x2="5.4" y2="8.5" stroke="#D8D8D6" stroke-width="1.3" stroke-linecap="round"/>
       </g>
     </g>
-    <g id="btn-2" class="remote-btn" tabindex="0" role="button" aria-label="Tasto 2" transform="translate(150.0, 746.0)">
+    <g id="btn-2" class="remote-btn" tabindex="0" role="button" aria-label="Number 2" transform="translate(150.0, 746.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -508,7 +508,7 @@
         <path d="M-4.85,6.62 L-4.15,6.62 L-2.20,11.78 L-2.87,11.78 L-3.38,10.36 L-5.62,10.36 L-6.13,11.78 L-6.80,11.78 L-4.85,6.62 Z M-3.59,9.78 L-4.28,7.93 L-4.49,7.37 L-4.51,7.37 L-4.72,7.93 L-5.41,9.78 L-3.59,9.78 Z M-1.75,6.62 L0.10,6.62 Q0.49,6.62 0.83,6.80 Q1.18,6.98 1.38,7.30 Q1.58,7.62 1.58,8.01 Q1.58,8.39 1.39,8.67 Q1.20,8.95 0.88,9.10 L0.88,9.13 Q1.26,9.26 1.51,9.58 Q1.75,9.89 1.75,10.32 Q1.75,10.73 1.54,11.07 Q1.33,11.40 0.97,11.59 Q0.62,11.78 0.20,11.78 L-1.75,11.78 L-1.75,6.62 Z M0.10,8.85 Q0.36,8.85 0.56,8.73 Q0.76,8.61 0.87,8.42 Q0.98,8.23 0.98,8.03 Q0.98,7.83 0.87,7.64 Q0.77,7.45 0.58,7.33 Q0.38,7.21 0.13,7.21 L-1.13,7.21 L-1.13,8.85 L0.10,8.85 Z M0.24,11.20 Q0.50,11.20 0.71,11.07 Q0.91,10.94 1.02,10.73 Q1.13,10.52 1.13,10.31 Q1.13,10.09 1.02,9.89 Q0.90,9.68 0.69,9.56 Q0.49,9.43 0.21,9.43 L-1.13,9.43 L-1.13,11.20 L0.24,11.20 Z M4.87,11.89 Q4.13,11.89 3.51,11.54 Q2.90,11.19 2.55,10.57 Q2.20,9.96 2.20,9.20 Q2.20,8.44 2.55,7.83 Q2.90,7.21 3.51,6.86 Q4.13,6.51 4.87,6.51 Q5.45,6.51 5.93,6.72 Q6.41,6.94 6.76,7.35 L6.32,7.78 Q6.03,7.42 5.68,7.26 Q5.33,7.09 4.87,7.09 Q4.31,7.09 3.84,7.35 Q3.38,7.62 3.10,8.10 Q2.82,8.57 2.82,9.20 Q2.82,9.83 3.10,10.31 Q3.38,10.78 3.84,11.05 Q4.31,11.31 4.87,11.31 Q5.81,11.31 6.47,10.54 L6.91,10.97 Q6.56,11.40 6.03,11.65 Q5.50,11.89 4.87,11.89 Z" fill="#D8D8D6"/>
       </g>
     </g>
-    <g id="btn-3" class="remote-btn" tabindex="0" role="button" aria-label="Tasto 3" transform="translate(219.0, 746.0)">
+    <g id="btn-3" class="remote-btn" tabindex="0" role="button" aria-label="Number 3" transform="translate(219.0, 746.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -520,7 +520,7 @@
         <path d="M-5.22,6.62 L-3.67,6.62 Q-2.88,6.62 -2.29,6.95 Q-1.70,7.28 -1.38,7.86 Q-1.06,8.44 -1.06,9.20 Q-1.06,9.96 -1.38,10.54 Q-1.70,11.12 -2.29,11.45 Q-2.88,11.78 -3.67,11.78 L-5.22,11.78 L-5.22,6.62 Z M-3.67,11.19 Q-2.75,11.19 -2.22,10.67 Q-1.68,10.14 -1.68,9.20 Q-1.68,8.26 -2.22,7.73 Q-2.75,7.21 -3.67,7.21 L-4.61,7.21 L-4.61,11.19 L-3.67,11.19 Z M-0.61,6.62 L2.37,6.62 L2.37,7.21 L-0.00,7.21 L-0.00,8.91 L2.14,8.91 L2.14,9.49 L-0.00,9.49 L-0.00,11.19 L2.37,11.19 L2.37,11.78 L-0.61,11.78 L-0.61,6.62 Z M2.82,6.62 L5.80,6.62 L5.80,7.21 L3.43,7.21 L3.43,8.97 L5.57,8.97 L5.57,9.55 L3.43,9.55 L3.43,11.78 L2.82,11.78 L2.82,6.62 Z" fill="#D8D8D6"/>
       </g>
     </g>
-    <g id="btn-4" class="remote-btn" tabindex="0" role="button" aria-label="Tasto 4" transform="translate(81.0, 802.0)">
+    <g id="btn-4" class="remote-btn" tabindex="0" role="button" aria-label="Number 4" transform="translate(81.0, 802.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -532,7 +532,7 @@
         <path d="M-2.46,11.89 Q-3.19,11.89 -3.80,11.54 Q-4.41,11.19 -4.77,10.57 Q-5.13,9.95 -5.13,9.20 Q-5.13,8.45 -4.77,7.83 Q-4.41,7.21 -3.80,6.86 Q-3.19,6.51 -2.46,6.51 Q-1.89,6.51 -1.39,6.71 Q-0.89,6.91 -0.56,7.28 L-1.00,7.72 Q-1.25,7.42 -1.63,7.25 Q-2.01,7.09 -2.45,7.09 Q-2.99,7.09 -3.47,7.35 Q-3.94,7.62 -4.23,8.10 Q-4.51,8.57 -4.51,9.20 Q-4.51,9.83 -4.23,10.31 Q-3.94,10.78 -3.47,11.05 Q-2.99,11.31 -2.45,11.31 Q-1.93,11.31 -1.58,11.15 Q-1.24,10.99 -0.98,10.72 Q-0.80,10.52 -0.68,10.23 Q-0.56,9.95 -0.54,9.60 L-2.44,9.60 L-2.44,9.04 L0.03,9.04 Q0.07,9.24 0.07,9.41 Q0.07,9.88 -0.08,10.33 Q-0.23,10.78 -0.56,11.12 Q-1.28,11.89 -2.46,11.89 Z M0.52,6.62 L1.13,6.62 L1.13,8.85 L3.78,8.85 L3.78,6.62 L4.39,6.62 L4.39,11.78 L3.78,11.78 L3.78,9.43 L1.13,9.43 L1.13,11.78 L0.52,11.78 L0.52,6.62 Z M4.84,6.62 L5.45,6.62 L5.45,11.78 L4.84,11.78 L4.84,6.62 Z" fill="#D8D8D6"/>
       </g>
     </g>
-    <g id="btn-5" class="remote-btn" tabindex="0" role="button" aria-label="Tasto 5" transform="translate(150.0, 802.0)">
+    <g id="btn-5" class="remote-btn" tabindex="0" role="button" aria-label="Number 5" transform="translate(150.0, 802.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -544,7 +544,7 @@
         <path d="M-3.71,11.83 Q-4.28,11.83 -4.70,11.52 Q-5.13,11.21 -5.30,10.64 L-4.72,10.40 Q-4.46,11.25 -3.71,11.25 Q-3.28,11.25 -3.03,10.96 Q-2.77,10.66 -2.77,10.18 L-2.77,6.57 L-2.16,6.57 L-2.16,10.13 Q-2.16,10.67 -2.36,11.05 Q-2.56,11.44 -2.91,11.64 Q-3.25,11.83 -3.71,11.83 Z M-1.71,6.57 L-1.10,6.57 L-1.10,9.28 L-1.07,9.28 L1.25,6.57 L2.03,6.57 L2.03,6.59 L0.13,8.80 L2.17,11.69 L2.17,11.72 L1.43,11.72 L-0.28,9.27 L-1.10,10.21 L-1.10,11.72 L-1.71,11.72 L-1.71,6.57 Z M2.62,6.57 L3.23,6.57 L3.23,11.14 L5.49,11.14 L5.49,11.72 L2.62,11.72 L2.62,6.57 Z" fill="#D8D8D6"/>
       </g>
     </g>
-    <g id="btn-6" class="remote-btn" tabindex="0" role="button" aria-label="Tasto 6" transform="translate(219.0, 802.0)">
+    <g id="btn-6" class="remote-btn" tabindex="0" role="button" aria-label="Number 6" transform="translate(219.0, 802.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -556,7 +556,7 @@
         <path d="M-7.32,6.62 L-6.43,6.62 L-4.79,10.85 L-4.76,10.85 L-3.12,6.62 L-2.24,6.62 L-2.24,11.78 L-2.84,11.78 L-2.84,8.50 L-2.81,7.52 L-2.84,7.52 L-4.53,11.78 L-5.03,11.78 L-6.71,7.52 L-6.74,7.52 L-6.71,8.50 L-6.71,11.78 L-7.32,11.78 L-7.32,6.62 Z M-1.79,6.62 L-1.04,6.62 L1.55,10.73 L1.58,10.73 L1.55,9.73 L1.55,6.62 L2.16,6.62 L2.16,11.78 L1.53,11.78 L-1.17,7.48 L-1.20,7.48 L-1.17,8.47 L-1.17,11.78 L-1.79,11.78 L-1.79,6.62 Z M5.25,11.89 Q4.51,11.89 3.91,11.53 Q3.30,11.17 2.95,10.55 Q2.61,9.94 2.61,9.20 Q2.61,8.47 2.95,7.85 Q3.30,7.23 3.91,6.87 Q4.51,6.51 5.25,6.51 Q5.99,6.51 6.60,6.87 Q7.20,7.23 7.55,7.85 Q7.89,8.47 7.89,9.20 Q7.89,9.94 7.55,10.55 Q7.20,11.17 6.60,11.53 Q5.99,11.89 5.25,11.89 Z M5.25,11.31 Q5.81,11.31 6.27,11.04 Q6.73,10.77 7.00,10.29 Q7.27,9.81 7.27,9.20 Q7.27,8.59 7.00,8.11 Q6.73,7.63 6.27,7.36 Q5.81,7.09 5.25,7.09 Q4.70,7.09 4.23,7.36 Q3.77,7.63 3.50,8.11 Q3.23,8.59 3.23,9.20 Q3.23,9.81 3.50,10.29 Q3.77,10.77 4.23,11.04 Q4.70,11.31 5.25,11.31 Z" fill="#D8D8D6"/>
       </g>
     </g>
-    <g id="btn-7" class="remote-btn" tabindex="0" role="button" aria-label="Tasto 7" transform="translate(81.0, 858.0)">
+    <g id="btn-7" class="remote-btn" tabindex="0" role="button" aria-label="Number 7" transform="translate(81.0, 858.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -568,7 +568,7 @@
         <path d="M-8.22,6.52 L-6.49,6.52 Q-6.05,6.52 -5.69,6.71 Q-5.32,6.91 -5.10,7.26 Q-4.88,7.61 -4.88,8.04 Q-4.88,8.48 -5.10,8.83 Q-5.32,9.18 -5.69,9.38 Q-6.05,9.57 -6.49,9.57 L-7.61,9.57 L-7.61,11.67 L-8.22,11.67 L-8.22,6.52 Z M-6.47,8.99 Q-6.18,8.99 -5.96,8.85 Q-5.74,8.71 -5.62,8.50 Q-5.50,8.28 -5.50,8.04 Q-5.50,7.81 -5.62,7.59 Q-5.74,7.37 -5.96,7.24 Q-6.18,7.10 -6.47,7.10 L-7.61,7.10 L-7.61,8.99 L-6.47,8.99 Z M-0.53,11.48 Q-1.11,11.79 -1.79,11.79 Q-2.53,11.79 -3.13,11.43 Q-3.74,11.07 -4.08,10.45 Q-4.43,9.84 -4.43,9.10 Q-4.43,8.36 -4.08,7.74 Q-3.74,7.12 -3.13,6.76 Q-2.53,6.40 -1.79,6.40 Q-1.05,6.40 -0.44,6.76 Q0.16,7.12 0.51,7.74 Q0.86,8.36 0.86,9.10 Q0.86,9.71 0.62,10.25 Q0.38,10.78 -0.06,11.15 L0.30,11.69 L-0.17,12.00 L-0.53,11.48 Z M-1.79,11.21 Q-1.30,11.21 -0.86,10.98 L-1.48,10.05 L-1.01,9.72 L-0.39,10.65 Q-0.10,10.37 0.07,9.97 Q0.24,9.57 0.24,9.10 Q0.24,8.48 -0.03,8.01 Q-0.30,7.53 -0.77,7.26 Q-1.23,6.99 -1.79,6.99 Q-2.34,6.99 -2.81,7.26 Q-3.27,7.53 -3.54,8.01 Q-3.81,8.48 -3.81,9.10 Q-3.81,9.70 -3.54,10.18 Q-3.26,10.67 -2.80,10.94 Q-2.34,11.21 -1.79,11.21 Z M1.31,6.52 L3.05,6.52 Q3.47,6.52 3.84,6.71 Q4.21,6.91 4.43,7.26 Q4.65,7.61 4.65,8.04 Q4.65,8.40 4.48,8.71 Q4.32,9.02 4.04,9.23 Q3.75,9.44 3.41,9.51 L3.39,9.53 L4.85,11.64 L4.85,11.67 L4.13,11.67 L2.72,9.57 L1.92,9.57 L1.92,11.67 L1.31,11.67 L1.31,6.52 Z M3.01,9.00 Q3.28,9.00 3.51,8.88 Q3.75,8.76 3.89,8.54 Q4.03,8.32 4.03,8.04 Q4.03,7.81 3.90,7.59 Q3.78,7.37 3.56,7.24 Q3.34,7.10 3.05,7.10 L1.92,7.10 L1.92,9.00 L3.01,9.00 Z M7.10,11.79 Q6.71,11.79 6.35,11.63 Q5.98,11.46 5.70,11.15 Q5.42,10.84 5.30,10.39 L5.88,10.15 Q6.00,10.61 6.33,10.91 Q6.67,11.21 7.11,11.21 Q7.56,11.21 7.87,10.96 Q8.18,10.72 8.18,10.31 Q8.18,9.95 7.91,9.71 Q7.65,9.48 7.06,9.28 L6.73,9.16 Q6.18,8.97 5.84,8.65 Q5.49,8.33 5.49,7.77 Q5.49,7.40 5.69,7.09 Q5.90,6.78 6.26,6.59 Q6.62,6.40 7.06,6.40 Q7.51,6.40 7.84,6.57 Q8.17,6.73 8.37,6.97 Q8.57,7.21 8.65,7.44 L8.08,7.68 Q8.00,7.42 7.74,7.20 Q7.49,6.99 7.07,6.99 Q6.67,6.99 6.39,7.21 Q6.11,7.43 6.11,7.77 Q6.11,8.07 6.35,8.26 Q6.59,8.45 7.07,8.62 L7.41,8.74 Q8.06,8.97 8.43,9.33 Q8.80,9.69 8.80,10.30 Q8.80,10.79 8.54,11.13 Q8.29,11.47 7.90,11.63 Q7.51,11.79 7.10,11.79 Z" fill="#D8D8D6"/>
       </g>
     </g>
-    <g id="btn-8" class="remote-btn" tabindex="0" role="button" aria-label="Tasto 8" transform="translate(150.0, 858.0)">
+    <g id="btn-8" class="remote-btn" tabindex="0" role="button" aria-label="Number 8" transform="translate(150.0, 858.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -580,7 +580,7 @@
         <path d="M-4.73,7.15 L-6.17,7.15 L-6.17,6.57 L-2.67,6.57 L-2.67,7.15 L-4.11,7.15 L-4.11,11.72 L-4.73,11.72 L-4.73,7.15 Z M-0.33,11.83 Q-0.88,11.83 -1.32,11.58 Q-1.75,11.32 -1.99,10.87 Q-2.22,10.41 -2.22,9.81 L-2.22,6.57 L-1.61,6.57 L-1.61,9.84 Q-1.61,10.47 -1.28,10.86 Q-0.95,11.25 -0.33,11.25 Q0.29,11.25 0.62,10.86 Q0.96,10.47 0.96,9.84 L0.96,6.57 L1.57,6.57 L1.57,9.81 Q1.57,10.41 1.34,10.87 Q1.12,11.33 0.68,11.58 Q0.25,11.83 -0.33,11.83 Z M2.02,6.57 L2.70,6.57 L3.97,10.30 L4.14,10.81 L4.17,10.81 L4.35,10.30 L5.68,6.57 L6.36,6.57 L4.47,11.72 L3.85,11.72 L2.02,6.57 Z" fill="#D8D8D6"/>
       </g>
     </g>
-    <g id="btn-9" class="remote-btn" tabindex="0" role="button" aria-label="Tasto 9" transform="translate(219.0, 858.0)">
+    <g id="btn-9" class="remote-btn" tabindex="0" role="button" aria-label="Number 9" transform="translate(219.0, 858.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>
@@ -592,7 +592,7 @@
         <path d="M-9.82,6.62 L-9.15,6.62 L-8.21,10.41 L-8.12,10.76 L-8.09,10.76 L-7.99,10.41 L-6.83,6.62 L-6.20,6.62 L-5.10,10.41 L-4.99,10.76 L-4.96,10.76 L-3.95,6.62 L-3.27,6.62 L-4.66,11.78 L-5.29,11.78 L-6.39,8.05 L-6.50,7.64 L-6.53,7.64 L-6.65,8.05 L-7.79,11.78 L-8.43,11.78 L-9.82,6.62 Z M-1.08,9.11 L-2.72,6.62 L-1.98,6.62 L-0.69,8.63 L-0.66,8.63 L0.64,6.62 L1.36,6.62 L-0.28,9.11 L1.46,11.78 L0.74,11.78 L-0.66,9.62 L-0.69,9.62 L-2.10,11.78 L-2.82,11.78 L-1.08,9.11 Z M3.66,9.39 L1.91,6.62 L2.63,6.62 L3.94,8.78 L3.97,8.78 L5.27,6.62 L5.98,6.62 L4.27,9.39 L4.27,11.78 L3.66,11.78 L3.66,9.39 Z M6.43,11.14 L9.21,7.21 L6.55,7.21 L6.55,6.62 L9.92,6.62 L9.92,7.26 L7.14,11.19 L9.95,11.19 L9.95,11.78 L6.43,11.78 L6.43,11.14 Z" fill="#D8D8D6"/>
       </g>
     </g>
-    <g id="btn-0" class="remote-btn" tabindex="0" role="button" aria-label="Tasto 0" transform="translate(150.0, 911.0)">
+    <g id="btn-0" class="remote-btn" tabindex="0" role="button" aria-label="Number 0" transform="translate(150.0, 911.0)">
       <g class="corona-layer" pointer-events="none">
         <circle class="corona-pulse" cx="0" cy="0" r="23.7" fill="none" stroke="#38E8FF" stroke-width="2.6" opacity="0"/>
         <circle class="corona-glow" cx="0" cy="0" r="24.7" fill="none" stroke="#38E8FF" stroke-width="6.5" filter="url(#coronaGlow)" opacity="0"/>

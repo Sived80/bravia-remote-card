@@ -1,6 +1,6 @@
 import { Platform, SUPPORTED_PLATFORMS } from './commands';
 
-/** Sottoinsieme dell'oggetto `hass` del frontend usato dalla card. */
+/** Subset of the frontend `hass` object used by the card. */
 export interface HassEntityRegistryEntry {
   entity_id: string;
   device_id?: string | null;
@@ -36,8 +36,8 @@ export function platformOf(hass: Hass, entityId?: string): Platform | undefined 
 }
 
 /**
- * Tutte le TV Sony della casa, una per dispositivo.
- * Una TV con entrambe le integrazioni conta una volta sola: vince Bravia TV, poi Android TV Remote.
+ * All Sony TVs in the house, one per device.
+ * A TV with both integrations counts once: Bravia TV wins, then Android TV Remote.
  */
 export function findTvs(hass: Hass): string[] {
   const entries = Object.values(hass.entities ?? {}).filter(
@@ -57,13 +57,13 @@ export function findTvs(hass: Hass): string[] {
   return [...byDevice.values()];
 }
 
-/** La TV da usare quando la card non ne indica una: solo se in casa ce n'è una sola. */
+/** The TV to use when the card does not name one: only if there is a single TV in the house. */
 export function findRemote(hass: Hass): string | undefined {
   const tvs = findTvs(hass);
   return tvs.length === 1 ? tvs[0] : undefined;
 }
 
-/** Il media_player dello stesso dispositivo del telecomando (serve per accendere e spegnere). */
+/** The media_player of the remote's own device (used to switch on and off). */
 export function findMediaPlayer(hass: Hass, remoteId?: string): string | undefined {
   if (!remoteId) return undefined;
   const remote = hass.entities?.[remoteId];

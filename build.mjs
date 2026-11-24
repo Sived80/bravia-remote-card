@@ -1,5 +1,5 @@
-// Compila la card in dist/bravia-remote-card.js (un solo file, Lit compreso).
-// La versione viene letta da package.json.
+// Builds the card into dist/bravia-remote-card.js (a single file, Lit included).
+// The version is read from package.json.
 import { build, context } from 'esbuild';
 import { readFileSync } from 'node:fs';
 

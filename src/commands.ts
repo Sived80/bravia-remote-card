@@ -1,8 +1,8 @@
 /**
- * Mappa tasto del disegno -> comando, per le due integrazioni supportate.
- *  - braviatv: nomi IRCC della TV (remote.send_command)
- *  - androidtv_remote: nomi dei tasti Android (KEYCODE_ facoltativo)
- * Il tasto di accensione non è qui: lo gestisce la card con media_player on/off.
+ * Drawing button -> command map, for the two supported integrations.
+ *  - braviatv: the TV's IRCC names (remote.send_command)
+ *  - androidtv_remote: Android key names (KEYCODE_ optional)
+ * The power button is not here: the card handles it with media_player on/off.
  */
 export type Platform = 'braviatv' | 'androidtv_remote';
 
@@ -11,7 +11,7 @@ export const SUPPORTED_PLATFORMS: Platform[] = ['braviatv', 'androidtv_remote'];
 export interface ButtonDef {
   braviatv: string;
   androidtv_remote: string;
-  /** Ripete il comando tenendo premuto il tasto. */
+  /** Repeats the command while the button is held. */
   repeat?: boolean;
 }
 

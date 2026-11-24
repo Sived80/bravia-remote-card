@@ -1,7 +1,7 @@
-"""Crea test/editor-shot.html: finestra di configurazione ricostruita (dati di esempio, testi inglesi).
+"""Create test/editor-shot.html: a reconstructed configuration dialog (sample data, English texts).
 
-Uso: python test/build_editor_shots.py, poi Edge headless con ?mode=single oppure ?mode=multi
-(vedi README, sezione Development). Le immagini vanno in docs/images/.
+Usage: python test/build_editor_shots.py, then open it in a browser with ?mode=single or ?mode=multi
+(see README, Development section). The images go to docs/images/.
 """
 import json
 import pathlib
@@ -11,7 +11,7 @@ q = pathlib.Path(__file__).parent
 root = q.parent
 bundle = (root / 'dist' / 'bravia-remote-card.js').read_text(encoding='utf-8')
 
-# Testi inglesi dell'editor presi da src/i18n.ts, così restano allineati alla card.
+# English editor texts taken from src/i18n.ts, so they stay in sync with the card.
 i18n = (root / 'src' / 'i18n.ts').read_text(encoding='utf-8')
 en_block = i18n[i18n.index('const EN = {'):i18n.index('};', i18n.index('const EN = {'))]
 strings = {}
@@ -95,7 +95,7 @@ card.setConfig({ type: 'custom:bravia-remote-card', width: 214, ...cfg });
 card.hass = hass;
 document.getElementById('card').appendChild(card);
 await card.updateComplete;
-document.title = 'FATTO';
+document.title = 'DONE';
 })();
 </script></body></html>'''
 

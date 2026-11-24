@@ -53,7 +53,7 @@ export class BraviaRemoteCardEditor extends LitElement {
     this._config = config as Config;
   }
 
-  /** Alla prima apertura: preseleziona TV e media player trovati da soli (si possono cambiare). */
+  /** On first open: preselect the TV and media player found automatically (they can be changed). */
   protected updated() {
     if (this._autofilled || !this.hass || !this._config) return;
     this._autofilled = true;
@@ -92,7 +92,7 @@ export class BraviaRemoteCardEditor extends LitElement {
     const prevSize = resolveSize(prev);
     const next: Config = { ...ev.detail.value };
 
-    // Cambiata la TV: se il media player era quello automatico, segue la nuova TV.
+    // TV changed: if the media player was the automatic one, it follows the new TV.
     if (next.entity !== prev.entity) {
       const oldAuto = findMediaPlayer(this.hass, prev.entity);
       if (!prev.media_player || prev.media_player === oldAuto) {
@@ -100,7 +100,7 @@ export class BraviaRemoteCardEditor extends LitElement {
       }
     }
 
-    // Misure: con le proporzioni bloccate, cambiando una misura si adegua l'altra.
+    // Sizes: with locked proportions, changing one size adjusts the other.
     if (next.keep_ratio !== false) {
       const width = Number(next.width);
       const height = Number(next.height);
@@ -113,7 +113,7 @@ export class BraviaRemoteCardEditor extends LitElement {
     }
     delete next.max_width;
 
-    // I valori uguali a quelli predefiniti non vengono scritti nella configurazione.
+    // Values equal to the defaults are not written to the configuration.
     for (const [key, value] of Object.entries(BEHAVIOUR_DEFAULTS)) {
       if (next[key] === value) delete next[key];
     }

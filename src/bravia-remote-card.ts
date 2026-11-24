@@ -12,17 +12,17 @@ const VERSION = typeof __VERSION__ === 'string' ? __VERSION__ : 'dev';
 
 export interface BraviaRemoteCardConfig extends SizeConfig {
   type: string;
-  /** Entità remote.* della TV. Se manca, la card usa l'unica TV Sony della casa (con più TV va indicata). */
+  /** The TV's remote.* entity. If missing, the card uses the only Sony TV in the house (required with more TVs). */
   entity?: string;
-  /** media_player per accendere/spegnere. Se manca, quello dello stesso dispositivo. */
+  /** media_player used to switch on/off. If missing, the one of the same device. */
   media_player?: string;
-  /** Attesa prima che un tasto tenuto premuto inizi a ripetere (ms). */
+  /** Delay before a held button starts repeating (ms). */
   repeat_delay?: number;
-  /** Intervallo tra le ripetizioni (ms). */
+  /** Interval between repeats (ms). */
   repeat_interval?: number;
-  /** Vibrazione alla pressione (app mobile). */
+  /** Vibrate on press (mobile app). */
   haptic?: boolean;
-  /** Sostituisce il comando di singoli tasti, es. { "btn-ok": "DpadCenter" }. */
+  /** Overrides the command of single buttons, e.g. { "btn-ok": "DpadCenter" }. */
   commands?: Record<string, string>;
 }
 
@@ -89,7 +89,7 @@ export class BraviaRemoteCard extends LitElement {
   }
 
   protected updated() {
-    // Proporzioni libere: il disegno si adatta a larghezza e altezza scelte.
+    // Free proportions: the drawing fits the chosen width and height.
     const svg = this.renderRoot.querySelector('svg');
     const keep = resolveSize(this._config).keepRatio;
     svg?.setAttribute('preserveAspectRatio', keep ? 'xMidYMid meet' : 'none');
@@ -134,7 +134,7 @@ export class BraviaRemoteCard extends LitElement {
     `;
   }
 
-  // ---- interazione ----------------------------------------------------------
+  // ---- interaction ----------------------------------------------------------
 
   private _buttonFrom(e: Event): Element | undefined {
     const target = e.target as Element | null;
@@ -193,7 +193,7 @@ export class BraviaRemoteCard extends LitElement {
     this._send(btn.id);
   };
 
-  /** Riavvia l'animazione dell'alone luminoso. */
+  /** Restarts the glow animation. */
   private _flash(btn: Element) {
     btn.classList.remove('is-pressed');
     void (btn as SVGGraphicsElement).getBoundingClientRect();
@@ -205,7 +205,7 @@ export class BraviaRemoteCard extends LitElement {
     );
   }
 
-  // ---- comandi --------------------------------------------------------------
+  // ---- commands -------------------------------------------------------------
 
   private _send(buttonId: string, repeated = false) {
     const remote = this._remote;

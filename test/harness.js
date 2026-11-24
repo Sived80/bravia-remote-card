@@ -1,4 +1,4 @@
-// Finto `hass` per provare la card nel browser senza Home Assistant.
+// Fake `hass` to try the card in a browser without Home Assistant.
 export function makeHass({ platform = 'braviatv', mpState = 'off', remoteState = 'off', withTv = true, secondTv = false, bothIntegrations = false } = {}) {
   const calls = [];
   const entities = withTv ? {
@@ -15,8 +15,8 @@ export function makeHass({ platform = 'braviatv', mpState = 'off', remoteState =
     entities[id] = { entity_id: id, device_id: device, platform: plat };
     states[id] = { entity_id: id, state: 'off', attributes: {} };
   };
-  if (secondTv) { add('remote.camera', 'dev3', 'braviatv'); add('media_player.camera', 'dev3', 'braviatv'); }
-  // stessa TV con anche Android TV Remote: deve contare una volta sola
+  if (secondTv) { add('remote.bedroom', 'dev3', 'braviatv'); add('media_player.bedroom', 'dev3', 'braviatv'); }
+  // same TV also with Android TV Remote: it must count once
   if (bothIntegrations) add('remote.tv_android', 'dev1', 'androidtv_remote');
   return {
     calls, entities, states, locale: { language: 'it' },
