@@ -237,7 +237,7 @@ export class BraviaRemoteCard extends LitElement {
     }
     .remote {
       width: 100%;
-      max-width: var(--bravia-remote-max-width, 320px);
+      max-width: var(--bravia-remote-max-width, 214px);
       touch-action: manipulation;
       -webkit-touch-callout: none;
       -webkit-user-select: none;
