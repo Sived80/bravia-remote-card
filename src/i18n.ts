@@ -2,10 +2,12 @@ const EN = {
   name: 'Bravia Remote Card',
   description: 'A remote control for Sony BRAVIA TVs (Bravia TV or Android TV Remote integration).',
   no_tv: 'No Sony TV found. Add the Bravia TV or Android TV Remote integration, or choose the TV in the card editor.',
+  choose_tv: 'More than one Sony TV found: open the card editor and choose the TV for this remote.',
   unavailable: 'The TV is unavailable.',
 
   entity: 'TV',
-  entity_help: 'The TV this remote controls. Selected automatically when only one Sony TV is found.',
+  entity_help:
+    'The TV this remote controls. With a single Sony TV it is selected automatically; with more TVs, choose one here and add one card per TV.',
   media_player: 'Power button (media player)',
   media_player_help:
     'Used by the ⏻ button: it tells the card whether the TV is on and switches it on or off, even from standby. ' +
@@ -31,10 +33,12 @@ const IT: typeof EN = {
   name: 'Bravia Remote Card',
   description: 'Telecomando per TV Sony BRAVIA (integrazione Bravia TV o Android TV Remote).',
   no_tv: "Nessuna TV Sony trovata. Aggiungi l'integrazione Bravia TV o Android TV Remote, oppure scegli la TV nell'editor della card.",
+  choose_tv: "Ci sono più TV Sony: apri l'editor della card e scegli quale TV comanda questo telecomando.",
   unavailable: 'La TV non è raggiungibile.',
 
   entity: 'TV',
-  entity_help: 'La TV comandata da questo telecomando. Se in casa c’è una sola TV Sony viene scelta da sola.',
+  entity_help:
+    'La TV comandata da questo telecomando. Con una sola TV Sony viene scelta da sola; con più TV scegline una qui e aggiungi una card per ogni TV.',
   media_player: 'Tasto accensione (media player)',
   media_player_help:
     'Serve al tasto ⏻: dice alla card se la TV è accesa e la accende o spegne, anche dallo standby. ' +

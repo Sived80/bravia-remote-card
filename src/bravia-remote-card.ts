@@ -3,7 +3,7 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import REMOTE_SVG from '../assets/remote.svg';
 import { BUTTONS, POWER_BUTTON } from './commands';
 import { BEHAVIOUR_DEFAULTS, SizeConfig, resolveSize } from './constants';
-import { Hass, findMediaPlayer, findRemote, language, platformOf } from './hass';
+import { Hass, findMediaPlayer, findRemote, findTvs, language, platformOf } from './hass';
 import { t } from './i18n';
 import './editor';
 
@@ -12,7 +12,7 @@ const VERSION = typeof __VERSION__ === 'string' ? __VERSION__ : 'dev';
 
 export interface BraviaRemoteCardConfig extends SizeConfig {
   type: string;
-  /** Entità remote.* della TV. Se manca, la card cerca da sola una TV Sony. */
+  /** Entità remote.* della TV. Se manca, la card usa l'unica TV Sony della casa (con più TV va indicata). */
   entity?: string;
   /** media_player per accendere/spegnere. Se manca, quello dello stesso dispositivo. */
   media_player?: string;
@@ -84,7 +84,8 @@ export class BraviaRemoteCard extends LitElement {
     const old = changed.get('hass') as Hass | undefined;
     if (!old) return true;
     const id = this._remote;
-    return !id || old.states[id] !== this.hass.states[id] || old.locale?.language !== this.hass.locale?.language;
+    if (!id) return old.entities !== this.hass.entities || old.states !== this.hass.states;
+    return old.states[id] !== this.hass.states[id] || old.locale?.language !== this.hass.locale?.language;
   }
 
   protected updated() {
@@ -105,7 +106,13 @@ export class BraviaRemoteCard extends LitElement {
     const remote = this._remote;
     const state = remote ? this.hass.states[remote] : undefined;
     const unavailable = !state || state.state === 'unavailable';
-    const message = !remote ? t(lang, 'no_tv') : unavailable ? t(lang, 'unavailable') : '';
+    const message = remote
+      ? unavailable
+        ? t(lang, 'unavailable')
+        : ''
+      : findTvs(this.hass).length > 1
+        ? t(lang, 'choose_tv')
+        : t(lang, 'no_tv');
     const size = resolveSize(this._config);
     const style = size.keepRatio
       ? `--bravia-remote-width: ${size.width}px`

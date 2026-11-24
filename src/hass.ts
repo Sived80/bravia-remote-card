@@ -35,16 +35,32 @@ export function platformOf(hass: Hass, entityId?: string): Platform | undefined 
   return SUPPORTED_PLATFORMS.includes(p as Platform) ? (p as Platform) : undefined;
 }
 
-/** Trova un telecomando Sony: prima Bravia TV, poi Android TV Remote. */
-export function findRemote(hass: Hass): string | undefined {
+/**
+ * Tutte le TV Sony della casa, una per dispositivo.
+ * Una TV con entrambe le integrazioni conta una volta sola: vince Bravia TV, poi Android TV Remote.
+ */
+export function findTvs(hass: Hass): string[] {
   const entries = Object.values(hass.entities ?? {}).filter(
-    (e) => domainOf(e.entity_id) === 'remote' && !e.hidden && hass.states[e.entity_id],
+    (e) =>
+      domainOf(e.entity_id) === 'remote' &&
+      !e.hidden &&
+      hass.states[e.entity_id] &&
+      SUPPORTED_PLATFORMS.includes(e.platform as Platform),
   );
-  for (const platform of SUPPORTED_PLATFORMS) {
-    const found = entries.find((e) => e.platform === platform);
-    if (found) return found.entity_id;
+  const rank = (e: HassEntityRegistryEntry) => SUPPORTED_PLATFORMS.indexOf(e.platform as Platform);
+  entries.sort((a, b) => rank(a) - rank(b) || a.entity_id.localeCompare(b.entity_id));
+  const byDevice = new Map<string, string>();
+  for (const e of entries) {
+    const key = e.device_id || e.entity_id;
+    if (!byDevice.has(key)) byDevice.set(key, e.entity_id);
   }
-  return undefined;
+  return [...byDevice.values()];
+}
+
+/** La TV da usare quando la card non ne indica una: solo se in casa ce n'è una sola. */
+export function findRemote(hass: Hass): string | undefined {
+  const tvs = findTvs(hass);
+  return tvs.length === 1 ? tvs[0] : undefined;
 }
 
 /** Il media_player dello stesso dispositivo del telecomando (serve per accendere e spegnere). */

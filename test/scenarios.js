@@ -72,6 +72,30 @@ const change = (form, value) => form().dispatchEvent(new CustomEvent('value-chan
     e = await editor({ type: 'x', entity: 'remote.tv', media_player: 'media_player.cast' });
     out.push('editor scelta manuale (nessun evento atteso): ' + e.events.length);
     e.ed.remove();
+
+    // più TV in casa
+    const msg = (el) => el.shadowRoot.querySelector('.message')?.textContent ?? '';
+    el = await mount({ bothIntegrations: true });
+    await tap(el, 'btn-ok');
+    out.push('una TV con due integrazioni: ' + el.hass.calls.map((c) => c.target.entity_id).join() + ' msg="' + msg(el) + '"');
+    el.remove();
+    el = await mount({ secondTv: true });
+    await tap(el, 'btn-ok');
+    out.push('due TV senza entity: comandi=' + el.hass.calls.length + ' msg="' + msg(el) + '"');
+    el.remove();
+    el = await mount({ secondTv: true }, { type: 'x', entity: 'remote.camera' });
+    await tap(el, 'btn-ok'); await tap(el, 'btn-power');
+    out.push('due TV, camera: ' + el.hass.calls.map((c) => c.domain + '.' + c.service + ' ' + c.target.entity_id).join(' | '));
+    el.remove();
+    out.push('stub due TV: ' + JSON.stringify(customElements.get('bravia-remote-card').getStubConfig(makeHass({ secondTv: true }))));
+    e = await editor({ type: 'x' }, { secondTv: true });
+    out.push('editor due TV, eventi alla apertura: ' + e.events.length);
+    change(e.form, { ...e.form().data, entity: 'remote.camera' });
+    out.push('editor due TV, scelta camera: ' + JSON.stringify(e.events.at(-1)));
+    await e.ed.updateComplete;
+    change(e.form, { ...e.form().data, entity: 'remote.tv' });
+    out.push('editor cambio a soggiorno: ' + JSON.stringify(e.events.at(-1)));
+    e.ed.remove();
   } catch (err) { out.push('ERRORE ' + err.stack); }
   document.getElementById('out').textContent = out.join('\n'); document.title = 'FATTO';
 })();

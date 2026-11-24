@@ -48,7 +48,7 @@ Add the card from the card picker (**Bravia Remote Card**) or in YAML:
 type: custom:bravia-remote-card
 ```
 
-That is all: the card finds your TV. To choose it explicitly:
+With a single Sony TV that is all: the card finds it. To choose it explicitly:
 
 ```yaml
 type: custom:bravia-remote-card
@@ -57,11 +57,26 @@ media_player: media_player.living_room_tv
 width: 260
 ```
 
+### More than one Sony TV
+
+Add one card per TV and set `entity` in each one (in the visual editor, pick the TV from the **TV** field). The ⏻ button follows the chosen TV automatically.
+
+```yaml
+type: vertical-stack
+cards:
+  - type: custom:bravia-remote-card
+    entity: remote.living_room_tv
+  - type: custom:bravia-remote-card
+    entity: remote.bedroom_tv
+```
+
+When there is more than one Sony TV and `entity` is missing, the card does not guess: it stays disabled and asks you to choose the TV. A TV set up with both the Bravia TV and the Android TV Remote integration counts as one TV.
+
 ### Options
 
 | Option | Default | Description |
 |---|---|---|
-| `entity` | found automatically | The TV's `remote.*` entity (Bravia TV or Android TV Remote). |
+| `entity` | found automatically with one TV | The TV's `remote.*` entity (Bravia TV or Android TV Remote). Required when there is more than one Sony TV. |
 | `media_player` | found automatically | Media player used by the ⏻ button to know whether the TV is on and to switch it on or off. Defaults to the media player of the same TV. Do not use a Cast player: it cannot switch the TV on. |
 | `width` | `214` | Width in pixels (120–400). The remote shrinks on narrow screens. |
 | `height` | follows `width` | Height in pixels (400–1340). Only used when `keep_ratio` is `false`. |
