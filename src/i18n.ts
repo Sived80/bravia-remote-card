@@ -9,6 +9,7 @@ const STRINGS = {
     repeat_delay: 'Hold delay before repeating (ms)',
     repeat_interval: 'Repeat interval (ms)',
     haptic: 'Vibrate on press',
+    max_width: 'Remote size (maximum width)',
   },
   it: {
     name: 'Bravia Remote Card',
@@ -20,6 +21,7 @@ const STRINGS = {
     repeat_delay: 'Attesa prima della ripetizione (ms)',
     repeat_interval: 'Intervallo di ripetizione (ms)',
     haptic: 'Vibrazione alla pressione',
+    max_width: 'Dimensione del telecomando (larghezza massima)',
   },
 } as const;
 

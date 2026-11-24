@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit';
 import type { BraviaRemoteCardConfig } from './bravia-remote-card';
+import { DEFAULTS, MAX_WIDTH_RANGE } from './constants';
 import { Hass, language } from './hass';
 import { StringKey, t } from './i18n';
 
@@ -16,6 +17,10 @@ const SCHEMA = [
     },
   },
   { name: 'media_player', selector: { entity: { filter: [{ domain: 'media_player' }] } } },
+  {
+    name: 'max_width',
+    selector: { number: { ...MAX_WIDTH_RANGE, step: 2, mode: 'slider', unit_of_measurement: 'px' } },
+  },
   {
     type: 'grid',
     name: '',
@@ -48,7 +53,7 @@ export class BraviaRemoteCardEditor extends LitElement {
 
   protected render() {
     if (!this.hass || !this._config) return nothing;
-    const data = { repeat_delay: 500, repeat_interval: 200, haptic: true, ...this._config };
+    const data = { ...DEFAULTS, ...this._config };
     return html`
       <ha-form
         .hass=${this.hass}

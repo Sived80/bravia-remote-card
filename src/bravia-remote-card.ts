@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing, PropertyValues } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import REMOTE_SVG from '../assets/remote.svg';
 import { BUTTONS, POWER_BUTTON } from './commands';
+import { DEFAULTS, MAX_WIDTH_RANGE } from './constants';
 import { Hass, findMediaPlayer, findRemote, language, platformOf } from './hass';
 import { t } from './i18n';
 import './editor';
@@ -21,11 +22,12 @@ export interface BraviaRemoteCardConfig {
   repeat_interval?: number;
   /** Vibrazione alla pressione (app mobile). */
   haptic?: boolean;
+  /** Larghezza massima del telecomando in px (l'altezza segue in proporzione). */
+  max_width?: number;
   /** Sostituisce il comando di singoli tasti, es. { "btn-ok": "DpadCenter" }. */
   commands?: Record<string, string>;
 }
 
-const DEFAULTS = { repeat_delay: 500, repeat_interval: 200, haptic: true };
 const PRESS_FLASH_MS = 650;
 const OFF_STATES = ['off', 'standby', 'unknown'];
 
@@ -99,11 +101,16 @@ export class BraviaRemoteCard extends LitElement {
     const state = remote ? this.hass.states[remote] : undefined;
     const unavailable = !state || state.state === 'unavailable';
     const message = !remote ? t(lang, 'no_tv') : unavailable ? t(lang, 'unavailable') : '';
+    const width = Math.min(
+      MAX_WIDTH_RANGE.max,
+      Math.max(MAX_WIDTH_RANGE.min, Number(this._config.max_width) || DEFAULTS.max_width),
+    );
 
     return html`
       <ha-card>
         <div
           class="remote ${unavailable ? 'unavailable' : ''}"
+          style="--bravia-remote-width: ${width}px"
           @pointerdown=${this._onPointerDown}
           @keydown=${this._onKeyDown}
           @contextmenu=${(e: Event) => e.preventDefault()}
@@ -237,7 +244,7 @@ export class BraviaRemoteCard extends LitElement {
     }
     .remote {
       width: 100%;
-      max-width: var(--bravia-remote-max-width, 214px);
+      max-width: var(--bravia-remote-width, 214px);
       touch-action: manipulation;
       -webkit-touch-callout: none;
       -webkit-user-select: none;
