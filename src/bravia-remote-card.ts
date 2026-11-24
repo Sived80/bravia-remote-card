@@ -67,7 +67,7 @@ export class BraviaRemoteCard extends LitElement {
   }
 
   getGridOptions() {
-    return { columns: 6, min_columns: 3, rows: 'auto' };
+    return { columns: 12, min_columns: 6, rows: 'auto' };
   }
 
   private get _remote(): string | undefined {
