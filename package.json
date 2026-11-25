@@ -1,6 +1,6 @@
 {
   "name": "bravia-remote-card",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Home Assistant dashboard card: a remote control for Sony BRAVIA TVs",
   "private": true,
   "type": "module",
