@@ -29,9 +29,15 @@ It works with the **Bravia TV** and the **Android TV Remote** integrations and s
 
 [![Open your Home Assistant instance and open this repository in the Marketplace.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=Sived80&repository=bravia-remote-card&category=plugin)
 
-1. Click the button above, or in Home Assistant go to **Settings** → **Marketplace** and add `https://github.com/Sived80/bravia-remote-card` as a custom repository of type **Dashboard**.
-2. Install **Bravia Remote Card**.
+1. In Home Assistant go to **Settings** → **Marketplace** and search for **Bravia Remote Card**, or click the button above to open it directly.
+2. Install it.
 3. Reload the browser page.
+
+The Marketplace also offers new versions as updates.
+
+### Custom repository
+
+If the card does not show up in the search (for example on an older Marketplace version), add `https://github.com/Sived80/bravia-remote-card` as a custom repository of type **Dashboard** in the Marketplace, then install **Bravia Remote Card**.
 
 ### Manual
 
